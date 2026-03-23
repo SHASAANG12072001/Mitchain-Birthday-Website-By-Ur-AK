@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Mitchain ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+color:white;
+text-align:center;
+background-image:url("background.jpg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+}
+
+/* Dark overlay */
+
+.overlay{
+background:rgba(0,0,0,0.5);
+min-height:100vh;
+padding-bottom:40px;
+}
+
+/* Heading */
+
+.header{
+padding:30px;
+}
+
+.header h1{
+font-size:50px;
+margin:0;
+text-shadow:0 0 15px white;
+}
+
+.header p{
+font-size:22px;
+margin-top:10px;
+}
+
+/* Slideshow */
+
+.slideshow{
+width:90%;
+max-width:600px;
+height:800px;
+margin:auto;
+position:relative;
+overflow:hidden;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+background:black;
+}
+
+.slideshow img{
+width:100%;
+height:100%;
+object-fit:contain;
+position:absolute;
+top:0;
+left:0;
+opacity:0;
+transition:opacity 1s;
+}
+
+.slideshow img.active{
+opacity:1;
+}
+
+/* Buttons */
+
+.controls{
+margin-top:25px;
+}
+
+button{
+padding:12px 25px;
+margin:10px;
+font-size:18px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+background:white;
+color:#ff4b7d;
+font-weight:bold;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="header">
+<h1>Happy Birthday Mitchain 🎂❤️</h1>
+<p>You are the most beautiful part of my angel queen life and she is my everything 143💖💖💖💖✨✨✨✨✨✨✨✨✨✨❤️</p>
+</div>
+
+<div class="slideshow">
+<img src="photo1.jpg" class="active">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+<img src="photo6.jpg">
+<img src="photo7.jpg">
+<img src="photo8.jpg">
+<img src="photo9.jpg">
+<img src="photo10.jpg">
+</div>
+
+<div class="controls">
+<button onclick="playMusic()">▶ Play Music</button>
+<button onclick="pauseMusic()">⏸ Pause Music</button>
+</div>
+
+</div>
+
+<!-- AUTOPLAY MUSIC -->
+
+<audio id="music" autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* Photo slideshow */
+
+const slides = document.querySelectorAll(".slideshow img");
+let index = 0;
+
+function changeSlide(){
+slides[index].classList.remove("active");
+index = (index + 1) % slides.length;
+slides[index].classList.add("active");
+}
+
+setInterval(changeSlide,3000);
+
+/* Music control */
+
+const music = document.getElementById("music");
+
+/* Autoplay fix for browsers */
+
+window.addEventListener("load", () => {
+music.play().catch(()=>{});
+});
+
+function playMusic(){
+music.play();
+}
+
+function pauseMusic(){
+music.pause();
+}
+
+</script>
+
+</body>
+</html>
